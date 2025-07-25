@@ -1,5 +1,4 @@
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
-import PhotoBackgroundSection from './PhotoBackgroundSection';
 
 export default function TargetAudience() {
   const good = [
@@ -15,7 +14,7 @@ export default function TargetAudience() {
     'Purely academic researchers without production experience',
   ];
   return (
-    <PhotoBackgroundSection photo="/IMG_4531.jpeg" className="py-16" overlayOpacity="heavy">
+    <section className="py-16 bg-primary/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">Who Should Attend?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -43,6 +42,6 @@ export default function TargetAudience() {
           </div>
         </div>
       </div>
-    </PhotoBackgroundSection>
+    </section>
   );
 }

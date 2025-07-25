@@ -1,5 +1,4 @@
 import { RocketLaunchIcon, PlayCircleIcon, CodeBracketIcon, BoltIcon } from '@heroicons/react/24/outline';
-import PhotoBackgroundSection from './PhotoBackgroundSection';
 
 interface PropItem {
   title: string;
@@ -36,14 +35,14 @@ const items: PropItem[] = [
 
 export default function ValueProps() {
   return (
-    <PhotoBackgroundSection photo="/IMG_6592.jpeg" className="py-16" overlayOpacity="heavy">
+    <section className="py-16 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">What Makes Us Different</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map(({ title, description, Icon }, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-white/80 backdrop-blur-sm border border-primary/10 hover:border-accent/30 transition-colors"
+              className="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-white border border-primary/10 hover:border-accent/30 transition-colors"
             >
               <Icon className="h-8 w-8 text-accent mb-4" />
               <h3 className="text-lg font-semibold text-primary mb-2">{title}</h3>
@@ -52,6 +51,6 @@ export default function ValueProps() {
           ))}
         </div>
       </div>
-    </PhotoBackgroundSection>
+    </section>
   );
 }

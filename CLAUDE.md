@@ -54,7 +54,20 @@ This is a Next.js 14 application for the LLM London community website, using:
 - Hero, ValueProps, and TargetAudience components for landing page sections
 
 ### Environment Variables
-- No environment variables are currently required for basic functionality
+- Copy `.env.example` to `.env.local` and fill in the Google Sheets credentials
+- Required for contact form submissions to work properly
+
+#### Google Sheets Setup
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project or select existing one
+3. Enable the Google Sheets API
+4. Create a service account with Sheets API access
+5. Download the JSON key file
+6. Share your Google Sheet with the service account email
+7. Extract the required values for your `.env.local`:
+   - `GOOGLE_SHEET_ID` - from the Google Sheets URL
+   - `GOOGLE_CLIENT_EMAIL` - from the JSON key file
+   - `GOOGLE_PRIVATE_KEY` - from the JSON key file (keep the quotes and newlines)
 
 ## Development Notes
 

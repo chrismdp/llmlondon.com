@@ -16,9 +16,12 @@ export default function ContactPage() {
     formState: { errors },
     reset,
   } = useForm<ContactForm>();
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  
   const onSubmit = async (data: ContactForm) => {
-    setStatus('idle');
+    if (status === 'submitting') return; // Prevent multiple submissions
+    
+    setStatus('submitting');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -28,11 +31,15 @@ export default function ContactPage() {
       if (res.ok) {
         setStatus('success');
         reset();
+        // Reset status after 3 seconds
+        setTimeout(() => setStatus('idle'), 3000);
       } else {
         throw new Error('Submission failed');
       }
     } catch {
       setStatus('error');
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000);
     }
   };
   return (
@@ -59,10 +66,12 @@ export default function ContactPage() {
           </label>
           <input
             id="name"
-            className="w-full border border-primary/20 rounded-md p-2 bg-white/70"
+            className={`w-full border rounded-md p-2 bg-white/70 ${
+              errors.name ? 'border-red-500 bg-red-50' : 'border-primary/20'
+            }`}
             {...register('name', { required: true })}
           />
-          {errors.name && <span className="text-red-500 text-xs">This field is required</span>}
+          {errors.name && <span className="text-red-500 text-sm font-medium">This field is required</span>}
         </div>
         <div>
           <label className="block text-sm font-medium text-primary mb-1" htmlFor="email">
@@ -90,9 +99,10 @@ export default function ContactPage() {
         </div>
         <button
           type="submit"
-          className="px-6 py-3 rounded-md bg-primary text-background font-medium hover:bg-primary/90 transition-colors"
+          disabled={status === 'submitting'}
+          className="px-6 py-3 rounded-md bg-primary text-background font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Send Message
+          {status === 'submitting' ? 'Sending...' : 'Send Message'}
         </button>
       </form>
     </div>

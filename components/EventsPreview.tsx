@@ -32,9 +32,9 @@ export default function EventsPreview() {
   }, []);
 
   return (
-    <section className="py-16 bg-background">
+    <section id="events" className="py-16 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">Upcoming Events</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">Events</h2>
         {loading ? (
           <p className="text-center text-primary/70">Loading events…</p>
         ) : error ? (
@@ -43,19 +43,11 @@ export default function EventsPreview() {
           <p className="text-center text-primary/70">No upcoming events at the moment. Check back soon!</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.slice(0, 3).map((event) => (
+            {events.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
         )}
-        <div className="mt-8 flex justify-center">
-          <a
-            href="/events"
-            className="inline-block px-6 py-3 rounded-md border border-primary text-primary font-medium hover:bg-primary hover:text-background transition-colors"
-          >
-            See All Events
-          </a>
-        </div>
       </div>
     </section>
   );

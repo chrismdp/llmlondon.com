@@ -35,10 +35,12 @@ export default function SpeakersPage() {
       resourcesProvided: 'Yes',
     },
   });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const onSubmit = async (data: SpeakerFormValues) => {
-    setStatus('idle');
+    if (status === 'submitting') return; // Prevent multiple submissions
+    
+    setStatus('submitting');
     try {
       const res = await fetch('/api/speakers/apply', {
         method: 'POST',
@@ -50,16 +52,29 @@ export default function SpeakersPage() {
         reset();
         // Scroll to top to show success message
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Reset status after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
       } else {
         throw new Error('Failed to submit');
       }
     } catch {
       setStatus('error');
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000);
     }
   };
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      {/* Speaking hero image */}
+      <div className="mb-8">
+        <img 
+          src="/IMG_4531.jpeg" 
+          alt="Speaker presenting at LLM London" 
+          className="w-full h-64 object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
       <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-8">Why Speak at LLM London?</h1>
       
       <div className="prose prose-lg max-w-none mb-12">
@@ -384,9 +399,10 @@ export default function SpeakersPage() {
 
           <button
             type="submit"
-            className="px-8 py-4 rounded-md bg-primary text-background font-medium hover:bg-primary/90 transition-colors text-lg"
+            disabled={status === 'submitting'}
+            className="px-8 py-4 rounded-md bg-primary text-background font-medium hover:bg-primary/90 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit Speaker Application
+            {status === 'submitting' ? 'Submitting...' : 'Submit Speaker Application'}
           </button>
         </form>
       </div>

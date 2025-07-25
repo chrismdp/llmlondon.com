@@ -15,8 +15,8 @@ export default function Header() {
         </Link>
         <div className="flex items-center space-x-4">
           <ul className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <li><Link href="/events" className="hover:text-accent transition-colors">Events</Link></li>
-            <li><Link href="/community/about" className="hover:text-accent transition-colors">Community</Link></li>
+            <li><Link href="/#events" className="hover:text-accent transition-colors">Events</Link></li>
+            <li><Link href="/community" className="hover:text-accent transition-colors">Community</Link></li>
             <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
           </ul>
           <div className="flex items-center space-x-3">
