@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex space-x-4">
           <Link href="/community/about" className="hover:text-accent">About</Link>
           <Link href="/contact" className="hover:text-accent">Contact</Link>
-          <Link href="/sponsors/become-a-sponsor" className="hover:text-accent">Partners</Link>
+          <Link href="/sponsors" className="hover:text-accent">Partners</Link>
         </div>
       </div>
     </footer>
