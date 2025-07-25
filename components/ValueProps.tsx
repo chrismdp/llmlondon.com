@@ -1,4 +1,5 @@
 import { RocketLaunchIcon, PlayCircleIcon, CodeBracketIcon, BoltIcon } from '@heroicons/react/24/outline';
+import PhotoBackgroundSection from './PhotoBackgroundSection';
 
 interface PropItem {
   title: string;
@@ -35,7 +36,7 @@ const items: PropItem[] = [
 
 export default function ValueProps() {
   return (
-    <section className="py-16 bg-background">
+    <PhotoBackgroundSection photo="/IMG_6592.jpeg" className="py-16" overlayOpacity="heavy">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-8">What Makes Us Different</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -51,6 +52,6 @@ export default function ValueProps() {
           ))}
         </div>
       </div>
-    </section>
+    </PhotoBackgroundSection>
   );
 }

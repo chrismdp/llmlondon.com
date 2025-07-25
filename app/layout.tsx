@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://llmlondon.com'),
   title: {
     default: 'LLM London – Building the Future with AI',
     template: '%s | LLM London',

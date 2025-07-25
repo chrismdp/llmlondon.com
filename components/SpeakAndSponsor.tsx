@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import PhotoBackgroundSection from './PhotoBackgroundSection';
 
 export default function SpeakAndSponsor() {
   return (
-    <section className="py-16 bg-white/50">
+    <PhotoBackgroundSection photo="/IMG_4481.jpeg" className="py-16" overlayOpacity="heavy">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center mb-12">
           Get Involved with LLM London
@@ -92,6 +93,6 @@ export default function SpeakAndSponsor() {
           </div>
         </div>
       </div>
-    </section>
+    </PhotoBackgroundSection>
   );
 }
