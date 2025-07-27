@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { addToGoogleSheet } from '../../../../lib/googleSheets';
 
+
 /**
  * Handles sponsor inquiry submissions by saving them to Google Sheets.
  */

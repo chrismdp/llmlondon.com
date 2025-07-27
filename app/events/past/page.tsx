@@ -1,6 +1,6 @@
-import dynamic from 'next/dynamic';
+'use client';
 
-const FilteredEventsList = dynamic(() => import('../../../components/FilteredEventsList'), { ssr: false });
+import FilteredEventsList from '../../../components/FilteredEventsList';
 
 export default function PastEventsPage() {
   return <FilteredEventsList variant="past" />;

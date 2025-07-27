@@ -66,3 +66,4 @@ pids
 
 # Claude Code artifacts
 .claude/
+.open-next/

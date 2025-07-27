@@ -1,7 +1,6 @@
-import dynamic from 'next/dynamic';
+'use client';
 
-// Dynamically import EventsList to ensure client-side data fetching.
-const EventsList = dynamic(() => import('../../components/EventsList'), { ssr: false });
+import EventsList from '../../components/EventsList';
 
 export default function EventsPage() {
   return <EventsList />;

@@ -1,0 +1,22 @@
+{
+  "main": ".open-next/worker.js",
+  "name": "llm-london-com",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    {
+      "pattern": "llmlondon.com/*",
+      "zone_name": "llmlondon.com"
+    },
+    {
+      "pattern": "www.llmlondon.com/*",
+      "zone_name": "llmlondon.com"
+    }
+  ]
+}

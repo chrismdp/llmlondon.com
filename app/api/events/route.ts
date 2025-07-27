@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 
+
 // Host LinkedIn profiles mapping
-const HOSTS_LINKEDIN = {
+const HOSTS_LINKEDIN: { [key: string]: string } = {
   'chris parsons': 'https://www.linkedin.com/in/chrisparsons/',
   'oli guei': 'https://www.linkedin.com/in/oliguei/',
   'terry': 'https://www.linkedin.com/in/terrylurie/',
@@ -84,7 +85,7 @@ export async function GET() {
       const eventMatches = html.matchAll(/<a[^>]*href="(https:\/\/lu\.ma\/[^"]+)"[^>]*>[\s\S]*?<\/a>/g);
       const events = [];
       
-      for (const match of eventMatches) {
+      for (const match of Array.from(eventMatches)) {
         const eventUrl = match[1];
         if (eventUrl && eventUrl !== lumaUrl) {
           // Extract basic info from the HTML snippet
