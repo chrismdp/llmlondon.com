@@ -120,7 +120,7 @@ export default function CommunityPage() {
               <p className="text-primary/80">
                 We believe the AI community has too much hype and not enough hands‑on learning. That's
                 why every LLM London event focuses on real implementations, live demos, actionable content
-                and technical depth. We're built for practitioners, not consultants or sales people.
+                and technical depth. We're built for practitioners who want to learn and build with AI.
               </p>
             </div>
           </div>
@@ -196,30 +196,30 @@ export default function CommunityPage() {
           </div>
           
           <div className="bg-white rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-primary mb-3">Who We're Not For</h3>
+            <h3 className="text-lg font-semibold text-primary mb-3">What We Focus On</h3>
             <div className="grid md:grid-cols-2 gap-3">
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2 text-sm text-primary/80">
-                  <span className="text-red-500 mt-1">×</span>
-                  <span>Strategic (non-technical) AI consultants</span>
+                  <span className="text-accent mt-1">✓</span>
+                  <span>Practical AI implementations and demos</span>
                 </li>
                 <li className="flex items-start space-x-2 text-sm text-primary/80">
-                  <span className="text-red-500 mt-1">×</span>
-                  <span>Technical sales people looking for leads</span>
+                  <span className="text-accent mt-1">✓</span>
+                  <span>Real-world case studies and learnings</span>
                 </li>
                 <li className="flex items-start space-x-2 text-sm text-primary/80">
-                  <span className="text-red-500 mt-1">×</span>
-                  <span>Purely academic AI discussions</span>
+                  <span className="text-accent mt-1">✓</span>
+                  <span>Technical depth with actionable takeaways</span>
                 </li>
               </ul>
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2 text-sm text-primary/80">
-                  <span className="text-red-500 mt-1">×</span>
-                  <span>"Introduction to AI" content seekers</span>
+                  <span className="text-accent mt-1">✓</span>
+                  <span>Hands-on learning and community building</span>
                 </li>
                 <li className="flex items-start space-x-2 text-sm text-primary/80">
-                  <span className="text-red-500 mt-1">×</span>
-                  <span>Non-technical founders looking for "just build it"</span>
+                  <span className="text-accent mt-1">✓</span>
+                  <span>Networking with fellow practitioners</span>
                 </li>
               </ul>
             </div>

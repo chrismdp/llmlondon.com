@@ -7,11 +7,12 @@ export default function TargetAudience() {
     'Technical product managers understanding AI potential',
     'Startup founders hiring and building AI teams',
     'VC associates researching AI opportunities',
+    'Anyone curious about practical AI implementation',
   ];
   const bad = [
-    'Strategic (non‑technical) consultants',
-    'Technical sales professionals',
-    'Purely academic researchers without production experience',
+    'Primarily sales-focused presentations',
+    'Pure marketing without technical depth',
+    'Theoretical discussions without practical examples',
   ];
   return (
     <section className="py-16 bg-primary/5">
@@ -30,7 +31,7 @@ export default function TargetAudience() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-4">Not for</h3>
+            <h3 className="text-xl font-semibold text-primary mb-4">Less suitable for</h3>
             <ul className="space-y-3">
               {bad.map((item, idx) => (
                 <li key={idx} className="flex items-start space-x-2">

@@ -37,17 +37,16 @@ export default function AboutPage() {
       <p className="text-primary/80 mb-4">
         We believe the AI community has too much hype and not enough hands‑on learning.  That&apos;s
         why every LLM London event focuses on real implementations, live demos, actionable content
-        and technical depth.  We&apos;re built for practitioners, not consultants or sales people.
+        and technical depth.  We&apos;re built for practitioners who want to learn and build with AI.
       </p>
       <h2 className="text-2xl font-semibold text-primary mt-8 mb-3">Our Community</h2>
       <p className="text-primary/80">
-        LLM London brings together London&apos;s most technical AI practitioners: CTOs making strategic
+        LLM London brings together London&apos;s AI practitioners: CTOs making strategic
         AI decisions, developers building production AI systems, technical founders scaling AI
         companies, product managers integrating AI into products and investors researching AI
-        opportunities.  We&apos;re explicitly not for strategic consultants without technical depth,
-        sales professionals looking for leads or anyone seeking purely theoretical AI discussions.
-        Join us if you&apos;re building with AI, learning to build with AI, or hiring people who build
-        AI systems.
+        opportunities.  Our focus is on practical, hands-on learning rather than theoretical discussions.
+        Join us if you&apos;re building with AI, learning to build with AI, exploring AI applications,
+        or hiring people who build AI systems.
       </p>
     </div>
   );

@@ -107,9 +107,8 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mt-6 text-lg sm:text-xl text-primary/90 leading-relaxed"
         >
-          Connect with London&apos;s innovating builders at the cutting edge of generative AI.  Learn from
-          experts who have shipped AI to production, share what you know and meet friends and future
-          business partners.
+          Connect with London&apos;s AI community and learn from practitioners building real-world AI solutions.  
+          Share your experiences, discover new approaches, and meet fellow developers, founders, and AI enthusiasts.
         </motion.p>
         {!loading && nextEvent && (
           <motion.div

@@ -14,15 +14,15 @@ const items: PropItem[] = [
     Icon: RocketLaunchIcon,
   },
   {
-    title: 'Mandatory Live Demos',
+    title: 'Live Demonstrations',
     description:
-      'Every talk includes live demonstrations. See the technology in action, not just slides.',
+      'Our talks feature live demonstrations so you can see the technology in action, not just slides.',
     Icon: PlayCircleIcon,
   },
   {
     title: 'Technical Depth',
     description:
-      'Code samples, architecture details and GitHub repos. Technical content for technical people.',
+      'Get access to code samples, architecture details and GitHub repos. Learn the technical details that matter.',
     Icon: CodeBracketIcon,
   },
   {
