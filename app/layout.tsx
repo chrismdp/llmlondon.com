@@ -44,10 +44,11 @@ export const metadata: Metadata = {
     siteName: 'LLM London',
     images: [
       {
-        url: '/llm-london-banner.png',
-        width: 1200,
-        height: 630,
+        url: 'https://llmlondon.com/llm-london-banner.png',
+        width: 2016,
+        height: 592,
         alt: 'LLM London hero banner',
+        type: 'image/png',
       },
     ],
   },
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     title: 'LLM London – Building the Future with AI',
     description:
       'Connect with London\'s most innovative builders at the cutting edge of generative AI.',
-    images: ['/llm-london-banner.png'],
+    images: ['https://llmlondon.com/llm-london-banner.png'],
   },
 };
 
