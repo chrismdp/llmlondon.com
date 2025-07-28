@@ -12,6 +12,28 @@ export const metadata: Metadata = {
   },
   description:
     'LLM London is the premier platform for practitioners building with large language models. Join our community to learn from real production implementations, connect with builders and stay at the cutting edge of AI.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+      },
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+      },
+    ],
+  },
   openGraph: {
     type: 'website',
     title: 'LLM London – Building the Future with AI',
