@@ -40,7 +40,17 @@ export default function EventsPreview() {
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : events.length === 0 ? (
-          <p className="text-center text-primary/70">No upcoming events at the moment. Check back soon!</p>
+          <div className="text-center">
+            <p className="text-primary/70 mb-6">No events scheduled</p>
+            <a
+              href="https://lu.ma/llmlondon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
+            >
+              Subscribe on Luma for updates
+            </a>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event) => (

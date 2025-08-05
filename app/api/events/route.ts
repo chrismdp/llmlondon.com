@@ -116,31 +116,8 @@ export async function GET() {
   } catch (error) {
     console.error('Failed to fetch events from Luma:', error);
   }
-  // Fallback events based on actual LLM London events
-  const hostString1 = 'Chris Parsons, Oli Guei, Harpal Khing';
-  const hostString2 = 'LLM London Team';
-  
-  const sampleEvents = [
-    {
-      id: '0r21y9ox',
-      name: 'LLM London - Regular Social',
-      date: '2025-07-31T17:30:00.000Z',
-      speaker: hostString1, // Keep for backwards compatibility
-      hosts: parseHosts(hostString1),
-      description: 'Join us for an evening of networking and discussions about the latest in large language models. Connect with London\'s most innovative builders at the cutting edge of generative AI.',
-      registrationUrl: 'https://lu.ma/0r21y9ox',
-    },
-    {
-      id: 'llm-london-next',
-      name: 'LLM London - Monthly Meetup',
-      date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-      speaker: hostString2, // Keep for backwards compatibility
-      hosts: parseHosts(hostString2),
-      description: 'Monthly gathering of the LLM London community. Learn from experts who have shipped AI to production, share what you know, and meet future collaborators.',
-      registrationUrl: 'https://lu.ma/llmlondon',
-    },
-  ];
-  const response = NextResponse.json(sampleEvents);
+  // No events found, return empty array
+  const response = NextResponse.json([]);
   
   // Add caching headers - 10 minutes cache
   response.headers.set('Cache-Control', 'public, max-age=600, stale-while-revalidate=600');
