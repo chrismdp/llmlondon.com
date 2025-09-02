@@ -39,6 +39,7 @@ export async function GET() {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       },
+      redirect: 'follow', // Follow redirects automatically
     });
 
     if (response.ok) {
@@ -50,23 +51,38 @@ export async function GET() {
         try {
           const jsonData = JSON.parse(jsonLdMatch[1]);
           
-          // Check if it's an event or list of events
-          const events = Array.isArray(jsonData) ? jsonData : [jsonData];
+          // Check if it's an Organization with events
+          let eventsArray = [];
+          if (jsonData['@type'] === 'Organization' && jsonData.events) {
+            eventsArray = jsonData.events;
+          } else if (Array.isArray(jsonData)) {
+            eventsArray = jsonData;
+          } else if (jsonData['@type'] === 'Event' || jsonData['@type'] === 'SocialEvent') {
+            eventsArray = [jsonData];
+          }
           
-          const formattedEvents = events
+          const formattedEvents = eventsArray
             .filter((item: any) => item['@type'] === 'Event' || item['@type'] === 'SocialEvent')
             .map((event: any, index: number) => {
-              const organizerName = event.organizer?.name || 'LLM London Team';
+              // Handle organizer array
+              let organizerNames = [];
+              if (Array.isArray(event.organizer)) {
+                organizerNames = event.organizer.map((org: any) => org.name).filter(Boolean);
+              } else if (event.organizer?.name) {
+                organizerNames = [event.organizer.name];
+              }
+              
+              const organizerName = organizerNames.length > 0 ? organizerNames.join(', ') : 'LLM London Team';
               const hosts = parseHosts(organizerName);
               
               return {
-                id: event['@id'] || `event-${index}`,
+                id: event['@id']?.split('/').pop() || `event-${index}`,
                 name: event.name || 'LLM London Event',
                 date: event.startDate || new Date(Date.now() + (index + 1) * 7 * 24 * 60 * 60 * 1000).toISOString(),
                 speaker: organizerName, // Keep for backwards compatibility
                 hosts: hosts,
                 description: event.description || 'Join us for an evening of talks and networking with the LLM London community.',
-                registrationUrl: event.url || lumaUrl,
+                registrationUrl: event['@id'] || event.url || lumaUrl,
               };
             });
           
