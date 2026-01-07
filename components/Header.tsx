@@ -10,7 +10,7 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-30 bg-background/80 backdrop-blur border-b border-primary/10">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/llm-london-logo-raw.png" alt="LLM London logo" width={40} height={40} priority />
+          <Image src="/llm-london-logo.png" alt="LLM London logo" width={40} height={40} priority />
           <span className="font-semibold text-lg tracking-tight hidden sm:inline text-primary">LLM London</span>
         </Link>
         <div className="flex items-center space-x-4">

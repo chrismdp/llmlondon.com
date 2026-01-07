@@ -152,9 +152,12 @@ export default function SpeakersPage() {
       {/* Application Form Section */}
       <div className="border-t-2 border-primary/20 pt-12">
         <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-6">Apply to Speak</h2>
-        <p className="text-primary/80 mb-8">
+        <p className="text-primary/80 mb-4">
           Share your production AI experience with our community. We review applications on a rolling basis and will get back to you within a week.
         </p>
+        <div className="mb-8 p-3 rounded-md bg-primary/5 border border-primary/10 text-primary/90">
+          All questions are optional. Only provide the information you have. The final question is for optional extra details if helpful.
+        </div>
 
         {status === 'success' && (
           <div className="mb-6 p-4 rounded-md bg-green-50 border border-green-200 text-green-800">
@@ -386,7 +389,7 @@ export default function SpeakersPage() {
 
           <div>
             <label className="block text-sm font-medium text-primary mb-1" htmlFor="additionalInfo">
-              Additional Information (links to previous talks, special requirements, etc.)
+              Optional extra information (links to previous talks, special requirements, etc.)
             </label>
             <textarea
               id="additionalInfo"

@@ -93,6 +93,21 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95"></div>
       </div>
       <div className="relative max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <Image
+            src="/llm-london-logo.png"
+            alt="LLM London logo"
+            width={360}
+            height={360}
+            className="mx-auto drop-shadow-lg"
+            priority
+          />
+        </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
